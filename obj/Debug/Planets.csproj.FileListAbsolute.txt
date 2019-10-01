@@ -1,0 +1,6 @@
+C:\Users\Администратор\Desktop\Planets CLI\Planets\obj\Debug\Planets.csprojResolveAssemblyReference.cache
+C:\Users\Администратор\Desktop\Planets CLI\Planets\bin\Debug\Planets.exe.config
+C:\Users\Администратор\Desktop\Planets CLI\Planets\bin\Debug\Planets.exe
+C:\Users\Администратор\Desktop\Planets CLI\Planets\bin\Debug\Planets.pdb
+C:\Users\Администратор\Desktop\Planets CLI\Planets\obj\Debug\Planets.exe
+C:\Users\Администратор\Desktop\Planets CLI\Planets\obj\Debug\Planets.pdb
