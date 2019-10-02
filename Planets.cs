@@ -1,8 +1,4 @@
-﻿// Planets v0.0.2dbg Pre-Alpha. (c) Aqualabs, 2019. Game is shared via GNU LGPLv3 License.
-// ToDo: Researches 1/2, War, Diplomacy
-// Done: Resources, Selecting race, Next Turn, Researches 1/2
-// Changelog:
-// Added researches, but without ability to, actually, research. Some code fixes.
+﻿// Planets v0.0.3dbg Pre-Alpha. (c) Aqualabs, 2019. Game is shared via GNU LGPLv3 License.
 
 using System;
 using System.Text;
@@ -11,7 +7,7 @@ using System.Text;
         class Program {
             public static void Main (string[] args) {
 			
-			string Language = "russian"; // Язык по умолчанию
+			// string Language = "russian"; // Язык по умолчанию
 			// ДОБАВИТЬ АНГЛИЙСКИЙ ПЕРЕВОД!!
 			// string start_en = "Welcome to Planets, a CLI turn-based strategy."
 			// string start_ru = "Добро пожаловать в Planets - консольную пошаговую стратегию."
@@ -32,34 +28,44 @@ using System.Text;
                 int population; // Население
                 int turn; // Текущий ход
                 int researchTurnsLeft = 0; // Сколько ходов осталось до завершения исследования
-                string currentResearch = "ничего";
+                string currentResearch = "";
                 
                 // Здесь начинается список доступных исследований.
                 // При необходимости добавить новое исследование просто дописываем его.
-                string combatResearch1 = "Ультрафиолетовый лазер";
-                string combatResearch2 = "Термоядерные боеголовки";
-                string combatResearch3 = "Генератор молний";
-                string combatResearch4 = "Пульс-лазерный дезинтегратор";
-                string combatResearch5 = "Боеголовка на основе антиматерии";
-                string combatResearch6 = "Генератор чёрной дыры";
-                
-                string shipsResearch1 = "Улучшенный эсминец, класс 3";
-                string shipsResearch2 = "Улучшенный эсминец, класс 2";
-                string shipsResearch3 = "Крейсер, класс 3";
-                string shipsResearch4 = "Улучшенный эсминец, класс 1";
-                string shipsResearch5 = "Крейсер, класс 2";
-                string shipsResearch6 = "Элитный эсминец";
-                string shipsResearch7 = "Линкор, класс 3";
-                string shipsResearch8 = "Крейсер, класс 1";
-                string shipsResearch9 = "Линкор, класс 2";
-                string shipsResearch10 = "Линкор, класс 1";
-                
-                string infrastructureResearch1 = "Орбитальные перинатальные центры";
-                string infrastructureResearch2 = "Терраформер, класс 3";
+                int [] crGoX = {3, 5, 7, 9, 11, 13, 15};
+                int [] srGoX = {4, 7, 11, 14, 17, 21, 25};
+                int [] irGoX = {3, 5, 7, 9, 11, 14};
+                int crGo = 0;
+                int srGo = 0;
+                int irGo = 0;
+                bool researchActive = false; // активно исследование или нет
+                int rscChoice = 0; // выбор в меню исследований
+                bool crActive = false; // Сейчас изучается оружие
+                bool srActive = false; // Сейчас изучаются корабли
+                bool irActive = false; // Сейчас изучается инфраструктура
+                // Массив с доступными исследованиями по оружию.
+                string [] combatResearches;
+                combatResearches = new string[] {"Ультрафиолетовый лазер", "Термоядерные боеголовки", "Генератор молний", "Пульс-лазерный дезинтегратор", "Боеголовка на основе антиматерии", "Генератор чёрной дыры"};
+                string [] crTurns;
+                crTurns = new string[] {"3 хода для изучения", "5 ходов для изучения", "7 ходов для изучения", "9 ходов для изучения", "11 ходов для изучения", "13 ходов для изучения", "15 ходов для изучения"};
+                // Массив с доступными исследованиями по кораблям.
+                string [] shipsResearches;
+                shipsResearches = new string[] {"Улучшенный эсминец, класс 3", "Улучшенный эсминец, класс 2", "Крейсер, класс 3", "Улучшенный эсминец, класс 1", "Крейсер, класс 2", "Элитный эсминец", "Линкор, класс 3", "Крейсер, класс 1", "Линкор, класс 2", "Линкор, класс 1"};
+                string [] srTurns;
+                srTurns = new string[] {"4 хода для изучения", "7 ходов для изучения", "11 ходов для изучения", "14 ходов для изучения", "17 ходов для изучения", "21 ход для изучения", "25 ходов для изучения"};
+                // Массив с доступными исследованиями по инфраструктуре.
+                string [] infrastructureResearches;
+                infrastructureResearches = new string[] {"Орбитальные перинатальные центры", "Терраформер, класс 3", "Модификация ДНК", "Терраформер, класс 2", "Люди из пробирки", "Терраформер, класс 1"};
+                string [] irTurns;
+                irTurns = new string[] {"3 хода для изучения", "5 ходов для изучения", "7 ходов для изучения", "9 ходов для изучения", "11 ходов для изучения", "14 ходов для изучения"};
                 
                 int combatResearched = 0; // Сколько у нас уже готовых исследований по оружию
                 int shipsResearched = 0; // Сколько у нас уже готовых исследований по кораблям
-                int infrastructureReseacrhed = 0; // Сколько у нас уже готовых исследований по инфраструктуре
+                int infrastructureResearched = 0; // Сколько у нас уже готовых исследований по инфраструктуре
+                
+                string combatResearchCurrent = "";
+                string shipsResearchCurrent = "";
+                string infrastructureResearchCurrent = "";
                 
                 // Отсюда начинается вступление в игру.
                 Console.WriteLine("Добро пожаловать в Planets - консольную пошаговую стратегию.");
@@ -178,6 +184,9 @@ using System.Text;
                    nextTurn:
                     // Переход на следующий ход.
                     // Прогресс исследований добавлен 02.10.19
+                    if (researchTurnsLeft>0 & researchActive==true) {
+                    	researchTurnsLeft-- ;
+                    }
                     if (race==1) {
                     	money = money + 250;
                     	food = food + 5;
@@ -204,12 +213,98 @@ using System.Text;
                     }
                     
                    researches:
-                    // Наши исследования.
-                    Console.WriteLine("Список текущих доступных вам исследований:");
-                    if (combatResearched==0 && shipsResearched==0 && infrastructureReseacrhed==0) {
-                    	Console.WriteLine("Оружие - " + combatResearch1 + "; корабли - " + shipsResearch1 + "; инфраструктура - " + infrastructureResearch1 + ".");
-                    	Console.ReadKey();
+                    // Меню исследований начинается отсюда.
+                    if (researchActive==true)
+                    {
+                    	goto researchActiveMenu;
                     }
+                    else {
+                    	goto researchInactiveMenu;
+                    }
+                    
+                  researchActiveMenu:
+                    // Если исследование сейчас активно
+                    if (researchTurnsLeft>0 & researchActive==true) {
+                    	Console.WriteLine("Сейчас изучается " + currentResearch + ". Осталось " + researchTurnsLeft + " ходов.");
+                    	goto Game;
+                    }
+                    else if (researchTurnsLeft==0 & researchActive==false) {
+                    	goto researchInactiveMenu;
+                    }
+                    
+                   researchInactiveMenu:
+                    // Если текущего исследования нет.
+                    	Console.WriteLine("Сейчас вам доступны такие исследования:");
+                    	Console.WriteLine("1. Оружие - " + combatResearches[crGo] + ", " + crTurns[crGo] + ".");
+                    	Console.WriteLine("2. Корабли - " + shipsResearches[srGo] + ", " + srTurns[srGo] + ".");
+                    	Console.WriteLine("3. Инфраструктура - " + infrastructureResearches[irGo] + ", " + irTurns[irGo] + ".");
+                    	Console.WriteLine("Введите номер желаемого исследования, чтобы начать его.");
+                    	rscChoice = Convert.ToInt32(Console.ReadLine());
+                    	switch (rscChoice) {
+                    		case 1:
+                    			goto combatsrc;
+                    		case 2:
+                    			goto shipssrc;
+                    		case 3:
+                    			goto infrastructuresrc;
+                    		default:
+                    			goto Game;
+                    	}                  
+                   
+                   // При выборе исследования оружия 
+                   combatsrc:
+                    researchActive = true;
+                    researchTurnsLeft = crGoX[crGo];
+                    crActive = true;
+                    Console.WriteLine("Вы начали исследование " + combatResearches[crGo] + "." + "Осталось " + crGoX[crGo] + " ходов.");
+                    combatResearchCurrent = combatResearches[crGo];
+                    currentResearch = combatResearchCurrent;
+                    crGo++;
+                    goto Game;
+                   // При выборе исследования кораблей 
+                   shipssrc:
+                    researchActive = true;
+                    srActive = true;
+                    researchTurnsLeft = srGoX[srGo];
+                    Console.WriteLine("Вы начали исследование " + shipsResearches[crGo] + "." + "Осталось " + srGoX[srGo] + " ходов.");
+                    shipsResearchCurrent = shipsResearches[srGo];
+                    currentResearch = shipsResearchCurrent;
+                    srGo++;
+                    goto Game;
+                   // При выборе исследования инфраструктуры 
+                   infrastructuresrc:
+                    researchActive = true;
+                    irActive = true;
+                    researchTurnsLeft = irGoX[irGo];
+                    Console.WriteLine("Вы начали исследование " + infrastructureResearches[irGo] + "." + "Осталось " + irGoX[irGo] + " ходов.");
+                    infrastructureResearchCurrent = infrastructureResearches[irGo];
+                    currentResearch = infrastructureResearchCurrent;
+                    irGo++;
+                    goto researchEnd;
+                    
+                  // Завершение исследования
+                  researchEnd:
+                   if (crActive==true & researchTurnsLeft==0) {
+                   	combatResearched++;
+                   	crActive = false;
+                   	Console.WriteLine("Исследование " + combatResearchCurrent + "завершено.");
+                   	researchActive = false;
+                   	goto researches;
+                   }
+                   else if (srActive==true & researchTurnsLeft==0) {
+                   	shipsResearched++;
+                   	srActive = false;
+                   	Console.WriteLine("Исследование " + shipsResearchCurrent + "завершено.");
+                   	researchActive = false;
+                   	goto researches;
+                   }
+                   else if (irActive==true & researchTurnsLeft==0) {
+                   	infrastructureResearched++;
+                   	irActive = false;
+                   	Console.WriteLine("Исследование " + infrastructureResearchCurrent + "завершено.");
+                   	researchActive = false;
+                   	goto researches;
+                   }
+		}
 		}
 	}
-}

@@ -4,3 +4,9 @@ C:\Users\Администратор\Desktop\Planets CLI\Planets\bin\Debug\Planet
 C:\Users\Администратор\Desktop\Planets CLI\Planets\bin\Debug\Planets.pdb
 C:\Users\Администратор\Desktop\Planets CLI\Planets\obj\Debug\Planets.exe
 C:\Users\Администратор\Desktop\Planets CLI\Planets\obj\Debug\Planets.pdb
+C:\Users\mynam\Desktop\Planets\planets-master\obj\Debug\Planets.csprojResolveAssemblyReference.cache
+C:\Users\mynam\Desktop\Planets\planets-master\obj\Debug\Planets.exe
+C:\Users\mynam\Desktop\Planets\planets-master\obj\Debug\Planets.pdb
+C:\Users\mynam\Desktop\Planets\planets-master\bin\Debug\Planets.exe.config
+C:\Users\mynam\Desktop\Planets\planets-master\bin\Debug\Planets.exe
+C:\Users\mynam\Desktop\Planets\planets-master\bin\Debug\Planets.pdb
