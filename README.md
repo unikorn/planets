@@ -10,9 +10,15 @@ Select your race, unlock different researches, go on the war or make unions.
 Original idea brought by a game me and my friends played outdoors. Sitting under the cherry tree, we played very similar game IRL and our money were cherry tree leaves.
 
 Now we are strong enough to code it!
+
 AquaLabs / Acceptance / Dyonchik
+
 Subscribe:
+
 https://instagram.com/dyonchik
+
 https://vk.com/dyonchik
+
 https://twitch.tv/dyonchik
+
 Corporate mail: dyonchikk@gmail.com
