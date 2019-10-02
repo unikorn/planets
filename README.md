@@ -6,6 +6,10 @@ Made in Russian language, so anyone could translate it to other language if ther
 
 Changelog:
 
+v0.0.3dbg:
+Now researches are shiny working! You can make research in any of 3 different classes (besides they don't have any result at the end, but it is fixable xD)
+
+
 Snapshot 12510210:
 Added more interactivity to researches. Simplified code by using massives instead of strings and integers.
 
