@@ -14,7 +14,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Aqualabs")]
 [assembly: AssemblyProduct("Planets")]
-[assembly: AssemblyCopyright("Copyright 2019, Aqualabs")]
+[assembly: AssemblyCopyright("2019, Aqualabs. This game is shared via GNU LGPLv3 License.")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

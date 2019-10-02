@@ -1,4 +1,8 @@
-﻿// Planets v0.0.1 Pre-Alpha. (c) Aqualabs, 2019. Game is shared via GNU LGPLv3 License.
+﻿// Planets v0.0.2dbg Pre-Alpha. (c) Aqualabs, 2019. Game is shared via GNU LGPLv3 License.
+// ToDo: Researches 1/2, War, Diplomacy
+// Done: Resources, Selecting race, Next Turn, Researches 1/2
+// Changelog:
+// Added researches, but without ability to, actually, research. Some code fixes.
 
 using System;
 using System.Text;
@@ -6,6 +10,12 @@ using System.Text;
 	namespace Planets {
         class Program {
             public static void Main (string[] args) {
+			
+			string Language = "russian"; // Язык по умолчанию
+			// ДОБАВИТЬ АНГЛИЙСКИЙ ПЕРЕВОД!!
+			// string start_en = "Welcome to Planets, a CLI turn-based strategy."
+			// string start_ru = "Добро пожаловать в Planets - консольную пошаговую стратегию."
+			
                 // Здесь описываются доступные расы.
                 int race; // От значения этого числа зависит выбранная нами раса.
                 const int TerrainRace = 1;
@@ -25,10 +35,31 @@ using System.Text;
                 string currentResearch = "ничего";
                 
                 // Здесь начинается список доступных исследований.
+                // При необходимости добавить новое исследование просто дописываем его.
                 string combatResearch1 = "Ультрафиолетовый лазер";
                 string combatResearch2 = "Термоядерные боеголовки";
-                string combatResearch3 = "Генератор молний;
+                string combatResearch3 = "Генератор молний";
                 string combatResearch4 = "Пульс-лазерный дезинтегратор";
+                string combatResearch5 = "Боеголовка на основе антиматерии";
+                string combatResearch6 = "Генератор чёрной дыры";
+                
+                string shipsResearch1 = "Улучшенный эсминец, класс 3";
+                string shipsResearch2 = "Улучшенный эсминец, класс 2";
+                string shipsResearch3 = "Крейсер, класс 3";
+                string shipsResearch4 = "Улучшенный эсминец, класс 1";
+                string shipsResearch5 = "Крейсер, класс 2";
+                string shipsResearch6 = "Элитный эсминец";
+                string shipsResearch7 = "Линкор, класс 3";
+                string shipsResearch8 = "Крейсер, класс 1";
+                string shipsResearch9 = "Линкор, класс 2";
+                string shipsResearch10 = "Линкор, класс 1";
+                
+                string infrastructureResearch1 = "Орбитальные перинатальные центры";
+                string infrastructureResearch2 = "Терраформер, класс 3";
+                
+                int combatResearched = 0; // Сколько у нас уже готовых исследований по оружию
+                int shipsResearched = 0; // Сколько у нас уже готовых исследований по кораблям
+                int infrastructureReseacrhed = 0; // Сколько у нас уже готовых исследований по инфраструктуре
                 
                 // Отсюда начинается вступление в игру.
                 Console.WriteLine("Добро пожаловать в Planets - консольную пошаговую стратегию.");
@@ -56,7 +87,7 @@ using System.Text;
                     int terrainchoice;
                     terrainchoice = Convert.ToInt32(Console.ReadLine());
                     if (terrainchoice==1) {
-                    	race = 1;
+                    	race = TerrainRace;
                     	goto GameStart; }
                     else {
                     	goto raceSelect; }
@@ -69,7 +100,7 @@ using System.Text;
                     int lunarchoice;
                     lunarchoice = Convert.ToInt32(Console.ReadLine());
                     if (lunarchoice==1) {
-                    	race = 2;
+                    	race = LunarRace;
                     	goto GameStart; }
                     else {
                     	goto raceSelect; }
@@ -82,7 +113,7 @@ using System.Text;
                     int panyanchoice;
                     panyanchoice = Convert.ToInt32(Console.ReadLine());
                     if (panyanchoice==1) {
-                    	race = 3;
+                    	race = PanyanRace;
                     	goto GameStart; }
                     else {
                     	goto raceSelect; }
@@ -146,27 +177,27 @@ using System.Text;
                     
                    nextTurn:
                     // Переход на следующий ход.
-                    // ДОБАВИТЬ ПРОГРЕСС ИССЛЕДОВАНИЙ!!!!
+                    // Прогресс исследований добавлен 02.10.19
                     if (race==1) {
-                    	money = + 250;
-                    	food = + 5;
-                    	population = + 1000;
+                    	money = money + 250;
+                    	food = food + 5;
+                    	population = population + 1000;
                     	turn++;
                     	Console.WriteLine("Вы перешли на новый ход. До окончания исследования " + currentResearch + " осталось " + researchTurnsLeft + " ходов.");
                     	goto Game;
                     }
                     else if (race==2) {
-                    	money = + 500;
-                    	food = + 5;
-                    	population = + 500;
+                    	money = money + 500;
+                    	food = food + 5;
+                    	population = population + 500;
                     	turn++;
                     	Console.WriteLine("Вы перешли на новый ход. До окончания исследования " + currentResearch + " осталось " + researchTurnsLeft + " ходов.");
                     	goto Game;
                     }
                     else if (race==3) {
-                    	money = + 250;
-                    	food = + 10;
-                    	population = + 500;
+                    	money = money + 250;
+                    	food = food + 10;
+                    	population = population + 1000;
                     	turn++;
                     	Console.WriteLine("Вы перешли на новый ход. До окончания исследования " + currentResearch + " осталось " + researchTurnsLeft + " ходов.");
                     	goto Game;
@@ -174,7 +205,11 @@ using System.Text;
                     
                    researches:
                     // Наши исследования.
-                    
+                    Console.WriteLine("Список текущих доступных вам исследований:");
+                    if (combatResearched==0 && shipsResearched==0 && infrastructureReseacrhed==0) {
+                    	Console.WriteLine("Оружие - " + combatResearch1 + "; корабли - " + shipsResearch1 + "; инфраструктура - " + infrastructureResearch1 + ".");
+                    	Console.ReadKey();
+                    }
 		}
 	}
 }
