@@ -1,0 +1,6 @@
+C:\Users\Администратор\Desktop\Planets CLI\planets-experimental\planets-experimental\bin\Debug\planets-experimental.exe.config
+C:\Users\Администратор\Desktop\Planets CLI\planets-experimental\planets-experimental\bin\Debug\planets-experimental.exe
+C:\Users\Администратор\Desktop\Planets CLI\planets-experimental\planets-experimental\bin\Debug\planets-experimental.pdb
+C:\Users\Администратор\Desktop\Planets CLI\planets-experimental\planets-experimental\obj\Debug\planets-experimental.csprojResolveAssemblyReference.cache
+C:\Users\Администратор\Desktop\Planets CLI\planets-experimental\planets-experimental\obj\Debug\planets-experimental.exe
+C:\Users\Администратор\Desktop\Planets CLI\planets-experimental\planets-experimental\obj\Debug\planets-experimental.pdb

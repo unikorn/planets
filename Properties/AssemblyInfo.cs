@@ -9,12 +9,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Planets")]
-[assembly: AssemblyDescription("Planets is an text TBS game about cosmic wars.")]
+[assembly: AssemblyTitle("planets-experimental")]
+[assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Aqualabs")]
-[assembly: AssemblyProduct("Planets")]
-[assembly: AssemblyCopyright("2019, Aqualabs. This game is shared via GNU LGPLv3 License.")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("planets-experimental")]
+[assembly: AssemblyCopyright("Copyright 2019")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -28,4 +28,4 @@ using System.Runtime.InteropServices;
 //
 // You can specify all the values or you can use the default the Revision and 
 // Build Numbers by using the '*' as shown below:
-[assembly: AssemblyVersion("0.0.1")]
+[assembly: AssemblyVersion("1.0.*")]
