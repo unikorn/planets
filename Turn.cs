@@ -6,6 +6,7 @@ namespace planets_experimental
 	public class Turn
 	{
 		public int currentTurn = 1;
+		public int researchTurnsLeft = 0;
 		public string currentResearch = "";
 	}
 }
