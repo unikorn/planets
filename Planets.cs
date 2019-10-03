@@ -40,7 +40,7 @@ namespace planets_experimental
 				choice.thatRace = Convert.ToInt32(Console.ReadLine());
 				if (choice.thatRace==1) {
 					Console.WriteLine("Your choice is " + terrain.nameEnglish + ". Now welcome to the game.");
-					Console.ReadKey(); // goto Game;
+					Console.ReadKey();
 				}
 				else {
 					goto English;
@@ -53,7 +53,7 @@ namespace planets_experimental
 				choice.thatRace = Convert.ToInt32(Console.ReadLine());
 				if (choice.thatRace==1) {
 					Console.WriteLine("Your choice is " + lunar.nameEnglish + ". Now welcome to the game.");
-					Console.ReadKey(); // goto Game;
+					Console.ReadKey();
 				}
 				else {
 					goto English;
@@ -66,7 +66,7 @@ namespace planets_experimental
 				choice.thatRace = Convert.ToInt32(Console.ReadLine());
 				if (choice.thatRace==1) {
 					Console.WriteLine("Your choice is " + panyan.nameEnglish + ". Now welcome to the game.");
-					Console.ReadKey(); // goto Game;
+					Console.ReadKey();
 				}
 				else {
 					goto English;

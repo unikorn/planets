@@ -49,11 +49,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Choice.cs" />
+    <Compile Include="cResearch.cs" />
     <Compile Include="English.cs" />
     <Compile Include="Lunar.cs" />
     <Compile Include="Panyan.cs" />
     <Compile Include="Planets.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="sResearch.cs" />
     <Compile Include="Terrain.cs" />
     <Compile Include="Turn.cs" />
   </ItemGroup>
