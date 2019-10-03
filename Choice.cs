@@ -6,7 +6,7 @@ namespace planets_experimental
 	public class Choice
 	{
 		public int Language;
-		public int Race;
+		public string race;
 		public int thatRace;
 		public int RaceBeforeStart;
 	}

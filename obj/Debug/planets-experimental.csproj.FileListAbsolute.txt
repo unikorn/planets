@@ -4,3 +4,11 @@ C:\Users\Администратор\Desktop\Planets CLI\planets-experimental\pla
 C:\Users\Администратор\Desktop\Planets CLI\planets-experimental\planets-experimental\obj\Debug\planets-experimental.csprojResolveAssemblyReference.cache
 C:\Users\Администратор\Desktop\Planets CLI\planets-experimental\planets-experimental\obj\Debug\planets-experimental.exe
 C:\Users\Администратор\Desktop\Planets CLI\planets-experimental\planets-experimental\obj\Debug\planets-experimental.pdb
+C:\Users\mynam\Desktop\Planets\planets-snapshots\obj\Debug\planets-experimental.csprojResolveAssemblyReference.cache
+C:\Users\mynam\Desktop\Planets\planets-snapshots\obj\Debug\planets-experimental.exe
+C:\Users\mynam\Desktop\AquaLabs\planets-snapshots\obj\Debug\planets-experimental.csprojResolveAssemblyReference.cache
+C:\Users\mynam\Desktop\AquaLabs\planets-snapshots\obj\Debug\planets-experimental.exe
+C:\Users\mynam\Desktop\AquaLabs\planets-snapshots\bin\Debug\planets-experimental.exe.config
+C:\Users\mynam\Desktop\AquaLabs\planets-snapshots\bin\Debug\planets-experimental.exe
+C:\Users\mynam\Desktop\AquaLabs\planets-snapshots\bin\Debug\planets-experimental.pdb
+C:\Users\mynam\Desktop\AquaLabs\planets-snapshots\obj\Debug\planets-experimental.pdb

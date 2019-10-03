@@ -5,8 +5,6 @@ namespace planets_experimental
 {
 	public class Terrain
 	{
-		public string nameEnglish = "Terrain";
-		public string nameRussian = "Люди";
 		public int money = 10000;
 		public int moneyIncome = 250;
 		public int population = 100000;
@@ -16,9 +14,5 @@ namespace planets_experimental
 		public int attackPower = 100;
 		public int defencePower = 100;
 		public int turn = 0;
-		public string infoEnglish = "Terrain is a balanced race with a good population rate.";
-		public string infoEnglish2 = "Population + 500 against other races.";
-		public string infoRussian = "Люди - это сбалансированная раса с хорошим ростом населения.";
-		public string infoRussian2 = "Рост населения + 500 относительно других рас.";
 	}
 }

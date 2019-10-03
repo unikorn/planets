@@ -50,7 +50,8 @@
   <ItemGroup>
     <Compile Include="Choice.cs" />
     <Compile Include="cResearch.cs" />
-    <Compile Include="English.cs" />
+    <Compile Include="Language.cs" />
+    <Compile Include="iResearch.cs" />
     <Compile Include="Lunar.cs" />
     <Compile Include="Panyan.cs" />
     <Compile Include="Planets.cs" />
