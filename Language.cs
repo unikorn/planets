@@ -26,6 +26,16 @@ namespace planets_experimental
 			nowResearch = "Now researching: ";
 			reslft1 = "Before research ends it's ";
 			reslft2 = " turns left.";
+			chooseNext = "Choose: 1 - Next Turn; 2 - Researches; 3 - Resources; 4 - Diplomacy; 5 - War; 6 - Planets";
+			nextTurn = "You went on the next turn.";
+			currentTurn = "Current turn is ";
+			resource1 = "Now you have: ";
+			resource2 = " credits, ";
+			resource3 = " population on ";
+			resource4 = " planet(s), ";
+			resource5 = " kilotons of food, ";
+			resource6 = " troops on ";
+			resource7 = " ships.";
 		}
 		
 		 public string welcome { get; protected set; }
@@ -47,6 +57,16 @@ namespace planets_experimental
 		 public string nowResearch { get; protected set; }
 		 public string reslft1 { get; protected set; }
 		 public string reslft2 { get; protected set; }
+		 public string chooseNext { get; protected set; }
+		 public string nextTurn { get; protected set; }
+		 public string currentTurn { get; protected set; }
+		 public string resource1 { get; protected set; }
+		 public string resource2 { get; protected set; }
+		 public string resource3 { get; protected set; }
+		 public string resource4 { get; protected set; }
+		 public string resource5 { get; protected set; }
+		 public string resource6 { get; protected set; }
+		 public string resource7 { get; protected set; }
 	}
 	public class English : Language
 	{
@@ -78,6 +98,16 @@ namespace planets_experimental
 			nowResearch = "Сейчас исследуется: ";
 			reslft1 = "До конца исследования ещё ";
 			reslft2 = " ходов.";
+			chooseNext = "Выберите: 1 - Следующий ход; 2 - Исследования; 3 - Ресурсы; 4 - Дипломатия; 5 - Война; 6 - Планеты";
+			nextTurn = "Вы перешли на следующий ход.";
+			currentTurn = "Текущий ход - ";
+			resource1 = "У вас сейчас: ";
+			resource2 = " кредитов, ";
+			resource3 = " населения на ";
+			resource4 = " планете(ах), ";
+			resource5 = " килотонн еды, ";
+			resource6 = " солдат на ";
+			resource7 = " кораблях.";
 		}
 	}
 }

@@ -9,5 +9,6 @@ namespace planets_experimental
 		public string race;
 		public int thatRace;
 		public int RaceBeforeStart;
+		public int menuChoice;
 	}
 }
